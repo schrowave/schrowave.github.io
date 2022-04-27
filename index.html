@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ItoTTS and ItoWave</title>
+    <title>SchroWave</title>
 
     <!-- Bootstrap core CSS -->
     <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,9 +21,9 @@
 
 <header class="bg-dark text-white">
       <div class="container text-center">
-        <h1>DEMO of Schr\"oWave Based on Solving Two-Stage Conditional Schr\"odinger Bridge Problems</h1>
+        <h1>DEMO of SchroWave</h1>
 		<p class="lead" align="justify">
-            Anonymous 
+            Anonymous.  
                 </p>
       </div>
     </header>
@@ -36,16 +36,31 @@
         <div class="row">
           <div class="col-md-15 mx-auto">
             <p class="lead" align="justify">
-            本展示DEMO主要介绍ItoTTS和ItoWave，一种基于Ito随机微分方程的新一代语音合成的最新技术。
+            This demo introduces SchroWave, which can generate realistic voice by solving two-stage conditional schrodinger bridge problems. 
                 </p><p class="lead" align="justify">
-               ItoTTS和ItoWave旨在解决从文本生成语音的问题。 我们提出通过线性Ito随机微分方程，在条件输入下，
-			   如原始文本或者原始声音特征（例如语音mel谱），利用维纳过程作为驱动，在噪声信号中逐渐减去多余的信号，
-			   从而生成现实中对应的有意义的语音。这个过程很像是奥古斯特·罗丹从原始自然的石头中，利用雕刻技术和方法，
-			   从自然的石头中逐渐去掉多余的部分，从而雕刻出思想者。我们的方法将语音合成中的两个重要方面，
-			   也就是text-to-speech（TTS）和声码器（vocoder）统一在一个框架下完成了，我们分别称为ItoTTS和ItoWave。
-			   这个统一框架由两个随机过程组成，而这两个随机过程分别是线性Ito随机微分方程和其对应的反向时间Ito随机微分方程所确定的解。
-			   这两个随机过程，特别是反向的随机过程可以在文本输入条件下生成mel特征（ItoTTS）；或者在mel特征条件下，
-			   生成对应的连续声音（ItoWave）。实验结果显示，我们的主观听众MOS评分达到世界最高水平。
+                 In recent years, methods based on discrete diffusion models have achieved 
+  state-of-the-art performances in voice 
+  generation. 
+  In theory, the voice data can be transformed into the exact Gaussian prior distributions 
+  only when the diffusion 
+  time tends to infinity. But in real 
+  applications,
+   the Gaussian prior distribution can only be achieved approximately in a limited time duration run by these 
+   diffusion-based methods, thus 
+   resulting in sub-optimal sound quality. 
+    In this paper, we present the SchroWave to realize the continuous transformation 
+    from exact Dirac’s deltas 
+    to the target voice data distribution  
+    in finite time duration, 
+    conditioned on middle voice representation with different sizes.
+    At the same time, in order to overcome the difficulty in calculating the 
+    score on the low-dimensional manifold of voice data during the 
+    generation process, we propose 
+    to use a two-stage diffusion and generation method, while each stage implemented by 
+    solving a
+    conditional Schrodinger bridge problem. 
+    Our experiments on the public data set LJSpeech show that the effect is significant, 
+    and achieve the new state-of-the-art MOS of 4.53. 
               </p><p class="lead" align="justify">
               </p><p class="lead" align="justify">
 			  我们的ItoTTS和ItoWave的关键模块有两个，一个是用于预测log语音概率密度梯度值的深度神经网络，一个是基于该梯度值和
