@@ -70,14 +70,42 @@
                 <div class="col-md-8">
                     <h3>Frameworks, pipelines, modules, and algorithms in SchroWave</h3>				
 					</p><p class="lead" align="justify">
-			  The training pipeline of RealSinger.
+			  Example of two-stage wave generation in SchroWave. In the first stage, 
+  the data from the Dirac's distribution is transformed into 
+  the noisy target wave distributed over the whole ambient Euclidean space; 
+  in the second stage, 
+  the noisy wave is mapped into the distribution of clean target voice.
               </p><p class="lead" align="justify">
-                    <img src="src/training_of_realsinger.png" alt="Italian Trulli" width="750px">
+                    <img src="src/diagram_of_two-stage_waveform_generation.jpg" alt="Italian Trulli" width="750px">
                     <br>  </br> 
 					</p><p class="lead" align="justify">
-			   The inference pipeline of RealSinger.
+			    The density ratio evolves with the diffusion step.
               </p><p class="lead" align="justify">
-			  <img src="src/inference_of_realsinger.png" alt="Italian Trulli" width="750px">
+			  <img src="src/density_ratio_change.png" alt="Italian Trulli" width="750px">
+	      </p><p class="lead" align="justify">
+			   The density ratio prediction network in SchroWave.
+              </p><p class="lead" align="justify">
+			  <img src="src/density_ratio_network_schrowave.jpg" alt="Italian Trulli" width="750px">
+	      </p><p class="lead" align="justify">
+			   The score prediction network in SchroWave. 
+              </p><p class="lead" align="justify">
+			  <img src="src/schro_wave_score_prediction.jpg" alt="Italian Trulli" width="750px">
+	      </p><p class="lead" align="justify">
+			    Parallel voice segmentation and diffusion.
+              </p><p class="lead" align="justify">
+			  <img src="src/parallel_split_generation.jpg" alt="Italian Trulli" width="750px">
+	       </p><p class="lead" align="justify">
+			     Modules in score prediction network. (a) Time step embedding; (b) the residual block; 
+      (c) mel-spectrogram up-sampling. 
+              </p><p class="lead" align="justify">
+			  <img src="src/time_residual_spec.jpg" alt="Italian Trulli" width="750px">
+	       </p><p class="lead" align="justify">
+			  Two stages of wave generation in Schr\"oWave.
+  (a)The generation steps of the noisy wave from Dirac distribution in the first stage. 
+  (b)The generation steps of the clean wave from the noisy wave in the second stage.
+              </p><p class="lead" align="justify">
+			  <img src="src/stage1_diffusion_wave.jpg" alt="Italian Trulli" width="750px">
+	       <img src="src/stage2_diffusion_wave.jpg" alt="Italian Trulli" width="750px">
                 </div>
               </div>
               <br>  </br>
