@@ -33,9 +33,9 @@
         <div class="row">
           <div class="col-md-15 mx-auto">
             <p class="lead" align="justify">
-            This demo introduces SchroWave, which can generate realistic voice by solving two-stage conditional schrodinger bridge problems. 
+            This demo introduces SchroWave, which can generate realistic singing voice with given middle voice features, e.g. mel-spectrogram as input. 
                 </p><p class="lead" align="justify">
-                 In recent years, methods based on discrete diffusion models have achieved 
+                In recent years, methods based on discrete diffusion models have achieved 
   state-of-the-art performances in voice 
   generation. 
   In theory, the voice data can be transformed into the exact Gaussian prior distributions 
@@ -46,42 +46,38 @@
    diffusion-based methods, thus 
    resulting in sub-optimal sound quality. 
     In this paper, we present the SchroWave to realize the continuous transformation 
-    from exact Dirac’s deltas 
+    from  exact Dirac’s deltas 
     to the target voice data distribution  
     in finite time duration, 
-    conditioned on middle voice representation with different sizes.
+    conditioned on middle voice representation with different size.
     At the same time, in order to overcome the difficulty in calculating the 
     score on the low-dimensional manifold of voice data during the 
     generation process, we propose 
     to use a two-stage diffusion and generation method, while each stage implemented by 
     solving a
     conditional Schrodinger bridge problem. 
-    Our experiments on the public data set LJSpeech show that the effect is significant, 
+    Our experiments on the public data set LJSpeech show that the effect is significant
+    in both objective and subjective evaluation, 
     and achieve the new state-of-the-art MOS of 4.53. 
-              </p><p class="lead" align="justify">
-              </p><p class="lead" align="justify">
-			  我们的ItoTTS和ItoWave的关键模块有两个，一个是用于预测log语音概率密度梯度值的深度神经网络，一个是基于该梯度值和
-			  反向Ito随机微分方程的采样算法。
-              </p><p class="lead" align="justify">
+		  </p><p class="lead" align="justify">
 
 
-
-    </section>
+</section>
 
     <br>  </br>
             <div class="container">
               <div class="row">
                 <div class="col-md-8">
-                    <h3>预测log语音概率密度梯度值的深度神经网络</h3>				
+                    <h3>Frameworks and algorithms in RealSinger</h3>				
 					</p><p class="lead" align="justify">
-			  ItoTTS里的预测网络结构
+			  The training pipeline of RealSinger.
               </p><p class="lead" align="justify">
-                    <img src="src/itotts_arch.jpg" alt="Italian Trulli" width="750px">
+                    <img src="src/training_of_realsinger.png" alt="Italian Trulli" width="750px">
                     <br>  </br> 
 					</p><p class="lead" align="justify">
-			  ItoWave里的预测网络结构
+			   The inference pipeline of RealSinger.
               </p><p class="lead" align="justify">
-			  <img src="src/itowave_arch.jpg" alt="Italian Trulli" width="750px">
+			  <img src="src/inference_of_realsinger.png" alt="Italian Trulli" width="750px">
                 </div>
               </div>
               <br>  </br>
@@ -95,19 +91,15 @@
 
 
 
-
-
-
-        
-
      <section id="samples" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-13 mx-auto">
 
+ <h3>Singing samples</h3>	
 
             <p class="lead" align="justify">
-               您可以试听下ItoTTS和ItoWave合成的一些声音样本，相应文本如下:
+               Please check the following singing voice samples synthesized by RealSinger and other compared systems. The corresponding lyrics are as follows:
             </p>
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -118,329 +110,224 @@
             </style>
 
 			<p class="lead" align="justify">
-               1. but they proceeded in all seriousness, and would have shrunk from no outrage or atrocity in furtherance of their foolhardy enterprise.
+               1. Bào yī bào, jiù dàng zuò cóng méi yǒu zài yī qǐ, hǎo bù hǎo, yào jiě shì dōu yǐ jīng lái bu jí. (抱一抱, 就当作从没有在一起, 好不好, 要解释都已经来不及.)
             </p>
 			<p class="lead" align="justify">
-               2. three cars for press photographers, an official party bus for white house staff members and others, and two press buses.
+               2. Shì wǒ tài shǎ, shuō bu shàng ài bié shuō huǎng, jiù yī diǎn xǐ huān, shuō bu shàng hèn bié jiū chán. (是我太傻, 说不上爱别说谎, 就一点喜欢, 说不上恨别纠缠.)
             </p>
 			<p class="lead" align="justify">
-               3. a base station at a fixed location in dallas operated a radio network which linked together the lead car,
+               3. Hǎo bù hǎo, yǒu kuī qiàn wǒ men dōu bié zài zhuī jiù, suàn le ba, wǒ fù chū zài duō dōu bù zú gòu. (好不好, 有亏欠我们都别再追究, 算了吧, 我付出再多都不足够.)
             </p>
 			<p class="lead" align="justify">
-               4. the lifting had been so complete in this case that there was no trace of the print on the rifle itself when it was examined by latona.
+               4. Jiù yī diǎn xǐ huān, shuō bu shàng hèn bié jiū chán, bié zhuāng zuò gǎn tàn. (就一点喜欢, 说不上恨别纠缠, 别装作感叹.)
             </p>
 			<p class="lead" align="justify">
-               5. with the active cooperation of the responsible agencies and with the understanding of the people of the united states in their demands upon their president,
+               5. Dāng wǒ bù zài nǐ huì bù huì nán guò, nǐ gòu bù gòu wǒ zhè yàng sǎ tuō, shuō bu shàng ài bié shuō huǎng. (当我不在你会不会难过, 你够不够我这样洒脱, 说不上爱别说谎.)
+            </p>
+<p class="lead" align="justify">
+               6. Yīn wéi chéng zhǎng, wǒ men hū ěr jiān shuō sàn jiù sàn. (因为成长, 我们忽尔间说散就散.)
+            </p>
+			<p class="lead" align="justify">
+               7. Bù qù xiǎng, tā men yǒng yǒu měi lì de tài yáng, wǒ kàn jiàn, měi tiān de xī yáng yě huì yǒu biàn huà. (不去想, 他们拥有美丽的太阳, 我看见, 每天的夕阳也会有变化.)
+            </p>
+			<p class="lead" align="justify">
+               8. Wǒ zhōng yú áo xiáng, yòng xīn níng wàng bù hài pà, nǎ lǐ huì yǒu fēng, jiù fēi duō yuǎn ba. (我终于翱翔, 用心凝望不害怕, 哪里会有风, 就飞多远吧.)
+            </p>
+			<p class="lead" align="justify">
+               9. Wǒ zhōng yú kàn dào, suǒ yǒu mèng xiǎng dōu kāi huā, zhuī zhú de nián qīng, gē shēng duō liáo liàng. (我终于看到, 所有梦想都开花, 追逐的年轻, 歌声多嘹亮.)
+            </p>
+			<p class="lead" align="justify">
+               10. Měi yī cì, dōu zài pái huái gū dān zhōng jiān qiáng, měi yī cì, jiù suàn hěn shòu shāng yě bù shǎn lèi guāng. (每一次, 都在徘徊孤单中坚强, 每一次, 就算很受伤也不闪泪光.)
             </p>
 
               <br>  </br>
 
 	      
 	       <center>
-            <h3>ItoTTS和其他TTS系统的合成效果比较</h3>
+            <h3>Comparison between RealSinger and other systems</h3>
             <p></p>
             <p></p>
             <table>
               <thead>
                 <tr>
-                  <th>原始真人语音</th>
-                  <th>FastSpeech 2合成的语音</th>
-				  <th>Tacotron 2合成的语音</th>
-				  <th>ItoTTS合成的语音</th>
+                  <th>Ground truth</th>
+                  <th>FFT-Singer</th>
+				  <th>DiffSinger</th>
+				  <th>RealSinger</th>
                 </tr>
               </thead>
               <tbody>
 					 <tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ010-0062.wav"
+                      <source src="src/groundtruth/[popcs-说散就散-0000][G]抱一抱@就当作从没有在一起@好不好@要解释都已经来不及-diffsinger.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ010-0062.wav"
+                      <source src="src/fft-singer/[popcs-说散就散-0000][P]抱一抱@就当作从没有在一起@好不好@要解释都已经来不及-fft_singer.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ010-0062.wav"
+                      <source src="src/diffsinger/[popcs-说散就散-0000][P]抱一抱@就当作从没有在一起@好不好@要解释都已经来不及-diffsinger.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ010-0062.wav"
+                      <source src="src/realsinger/[popcs-说散就散-0000][P]抱一抱@就当作从没有在一起@好不好@要解释都已经来不及-itosinger.wav"
                         type="audio/wav"></audio></td>
                 </tr>
 			<tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0100.wav"
+                      <source src="src/groundtruth/[popcs-说散就散-0003][G]是我太傻@说不上爱别说谎@就一点喜欢@说不上恨别纠缠-diffsinger.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ030-0100.wav"
+                      <source src="src/fft-singer/[popcs-说散就散-0003][P]是我太傻@说不上爱别说谎@就一点喜欢@说不上恨别纠缠-fft_singer.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ030-0100.wav"
+                      <source src="src/diffsinger/[popcs-说散就散-0003][P]是我太傻@说不上爱别说谎@就一点喜欢@说不上恨别纠缠-diffsinger.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ030-0100.wav"
+                      <source src="src/realsinger/[popcs-说散就散-0003][P]是我太傻@说不上爱别说谎@就一点喜欢@说不上恨别纠缠-itosinger.wav"
                         type="audio/wav"></audio></td>
                 </tr>
 				<tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0106.wav"
+                      <source src="src/groundtruth/[popcs-说散就散-0006][G]好不好@有亏欠我们都别再追究@算了吧@我付出再多都不足够-diffsinger.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ030-0106.wav"
+                      <source src="src/fft-singer/[popcs-说散就散-0006][P]好不好@有亏欠我们都别再追究@算了吧@我付出再多都不足够-fft_singer.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ030-0106.wav"
+                      <source src="src/diffsinger/[popcs-说散就散-0006][P]好不好@有亏欠我们都别再追究@算了吧@我付出再多都不足够-diffsinger.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ030-0106.wav"
+                      <source src="src/realsinger/[popcs-说散就散-0006][P]好不好@有亏欠我们都别再追究@算了吧@我付出再多都不足够-itosinger.wav"
                         type="audio/wav"></audio></td>
                 </tr>
 				<tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ032-0137.wav"
+                      <source src="src/groundtruth/[popcs-说散就散-0009][G]就一点喜欢@说不上恨别纠缠@别装作感叹-diffsinger.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ032-0137.wav"
+                      <source src="src/fft-singer/[popcs-说散就散-0009][P]就一点喜欢@说不上恨别纠缠@别装作感叹-fft_singer.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ032-0137.wav"
+                      <source src="src/diffsinger/[popcs-说散就散-0009][P]就一点喜欢@说不上恨别纠缠@别装作感叹-diffsinger.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ032-0137.wav"
+                      <source src="src/realsinger/[popcs-说散就散-0009][P]就一点喜欢@说不上恨别纠缠@别装作感叹-itosinger.wav"
                         type="audio/wav"></audio></td>
                 </tr>
 				<tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ050-0277.wav"
+                      <source src="src/groundtruth/[popcs-说散就散-0012][G]当我不在你会不会难过@你够不够我这样洒脱@说不上爱别说谎-diffsinger.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ050-0277.wav"
+                      <source src="src/fft-singer/[popcs-说散就散-0012][P]当我不在你会不会难过@你够不够我这样洒脱@说不上爱别说谎-fft_singer.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ050-0277.wav"
+                      <source src="src/diffsinger/[popcs-说散就散-0012][P]当我不在你会不会难过@你够不够我这样洒脱@说不上爱别说谎-diffsinger.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ050-0277.wav"
+                      <source src="src/realsinger/[popcs-说散就散-0012][P]当我不在你会不会难过@你够不够我这样洒脱@说不上爱别说谎-itosinger.wav"
                         type="audio/wav"></audio></td>
                 </tr>
+
+		<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/groundtruth/[popcs-说散就散-0015][G]因为成长@我们忽尔间说散就散-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fft-singer/[popcs-说散就散-0015][P]因为成长@我们忽尔间说散就散-fft_singer.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/diffsinger/[popcs-说散就散-0015][P]因为成长@我们忽尔间说散就散-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/realsinger/[popcs-说散就散-0015][P]因为成长@我们忽尔间说散就散-itosinger.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+
+<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/groundtruth/[popcs-隐形的翅膀-0002][G]不去想@他们拥有美丽的太阳@我看见@每天的夕阳也会有变化-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fft-singer/[popcs-隐形的翅膀-0002][P]不去想@他们拥有美丽的太阳@我看见@每天的夕阳也会有变化-fft_singer.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/diffsinger/[popcs-隐形的翅膀-0002][P]不去想@他们拥有美丽的太阳@我看见@每天的夕阳也会有变化-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/realsinger/[popcs-隐形的翅膀-0002][P]不去想@他们拥有美丽的太阳@我看见@每天的夕阳也会有变化-itosinger.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+
+<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/groundtruth/[popcs-隐形的翅膀-0005][G]我终于翱翔@用心凝望不害怕@哪里会有风@就飞多远吧-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fft-singer/[popcs-隐形的翅膀-0005][P]我终于翱翔@用心凝望不害怕@哪里会有风@就飞多远吧-fft_singer.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/diffsinger/[popcs-隐形的翅膀-0005][P]我终于翱翔@用心凝望不害怕@哪里会有风@就飞多远吧-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/realsinger/[popcs-隐形的翅膀-0005][P]我终于翱翔@用心凝望不害怕@哪里会有风@就飞多远吧-itosinger.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+
+<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/groundtruth/[popcs-隐形的翅膀-0008][G]我终于看到@所有梦想都开花@追逐的年轻@歌声多嘹亮-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fft-singer/[popcs-隐形的翅膀-0008][P]我终于看到@所有梦想都开花@追逐的年轻@歌声多嘹亮-fft_singer.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/diffsinger/[popcs-隐形的翅膀-0008][P]我终于看到@所有梦想都开花@追逐的年轻@歌声多嘹亮-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/realsinger/[popcs-隐形的翅膀-0008][P]我终于看到@所有梦想都开花@追逐的年轻@歌声多嘹亮-itosinger.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+
+<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/groundtruth/[popcs-隐形的翅膀-0000][G]每一次@都在徘徊孤单中坚强@每一次@就算很受伤也不闪泪光-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fft-singer/[popcs-隐形的翅膀-0000][P]每一次@都在徘徊孤单中坚强@每一次@就算很受伤也不闪泪光-fft_singer.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/diffsinger/[popcs-隐形的翅膀-0000][P]每一次@都在徘徊孤单中坚强@每一次@就算很受伤也不闪泪光-diffsinger.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/realsinger/[popcs-隐形的翅膀-0000][P]每一次@都在徘徊孤单中坚强@每一次@就算很受伤也不闪泪光-itosinger.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+
               </tbody>
             </table>
 
-             
-
-              <br>  </br>
-
-
-
-             
-
-
-            <h3>ItoWave和其他vocoder系统的合成效果比较</h3>
-            <p></p>
-            <p></p>
-            <table>
-              <thead>
-                <tr>
-                      <th>原始真人语音</th>
-                  <th>WaveNet合成的语音</th>
-				  <th>WaveGlow合成的语音</th>
-				  <th>DiffWave合成的语音</th>
-				  <th>WaveGrad合成的语音</th>
-                  <th>ItoWave合成的语音</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-                 <tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-              </tbody>
-            </table>
-
-              <br>
-
-           
-
-            <br>  </br>
-
-
-			<h3>ItoTTS合成较长的语音</h3>
-            <p></p>
-            <p></p>
-                      
-			<p class="lead" align="justify">
-				例如7.12北京大暴雨（from china daily）：Beijing took multiple measures on Monday to cope with the heaviest rain to hit the capital this year. The downpours, along with strong winds, started on Sunday night and are forecast to last until Tuesday morning. From 6 pm on Sunday to 7 pm on Monday, an average of 100.4 millimeters of rain fell across the capital, according to the city's meteorological bureau. However, by late Monday afternoon there was no deep surface water on major roads in urban areas, after city authorities activated pumping stations. Flood warnings were also issued for residents of high-risk areas. Kindergartens and primary and secondary schools in the city suspended classes on Monday and company employees were encouraged to work from home or alter their travel times.
-            </p>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/beijing_rain.wav"
-                        type="audio/wav"></audio></td>
-			</center>
+        
           </div>
         </div>
       </div>
-    </section>
-	</center>
+
 	
 	
 	
-	<br>  </br>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h3>ItoTTS和ItoWave将白噪声变成有意义语音的过程</h3>
-					   </p><p class="lead" align="justify">
-					   以“to be or not to be, this is a big problem”为输入文本，ItoTTS从高斯噪声信号中逐步生成对应mel谱图的过程
-			  </p><p class="lead" align="justify">
-                      <img src="src/tobe_itotts_step1.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step100.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step200.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step300.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step400.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step500.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step600.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step700.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step800.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step900.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step1000.png" alt="Italian Trulli" width="500px">
-                    </div>
-                  </div>
-                </div>
 
-            </div>
-          </div>
-        </section>
-
- <br>  </br>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      </p><p class="lead" align="justify">
-			  以LJSpeech中句子LJ032-0167的频谱为输入，ItoWave从高斯噪声信号中逐步生成相应的语音的过程。 相应的文本是“he concluded, quote, there is no doubt in my mind that these fibers could have come from thisshirt.”
-              </p><p class="lead" align="justify">
-					  <img src="src/predicted_LJ032-0167_step1.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step100.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step200.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step300.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step400.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step500.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step600.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step700.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step800.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step900.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step1000.png" alt="Italian Trulli" width="500px">
-                    </div>
-                  </div>
-                </div>
-
-            </div>
-          </div>
-        </section>
 	
 	
 	
 
     <section id="Reference" class="bg-white">
-      <center><h3>发表该技术的相关论文</h3></center>
+      <center><h3>Related paper</h3></center>
 
       <div class="container">
         <div class="row">
           <div class="col-lg-13 mx-auto">
               <p class="lead" align="justify">
 		  <p class="lead" align="justify">
-			    [1]. Anonymous. Schr\"oWave: Realistic Voice Generation by Solving Two-Stage Conditional Schr\"odinger Bridge Problems.
+			    [1]. Anonymous. RealSinger: Ultra-Realistic Singing Voice Generation via Stochastic Differential Equations.
                     </p>
               </p>
           </div>
